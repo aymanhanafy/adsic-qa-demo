@@ -1,0 +1,14 @@
+applications:
+- path: target/JavaHelloWorldApp.war
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: adsic-qa-demo
+  host: adsic-qa-demo
+  disk_quota: 1024M
+  services:
+  - adsic_db
+  - adsic_nlc
+  env:
+    JBP_CONFIG_LIBERTY: 'app_archive: {features: [jsp-2.2, jaxrs-1.1, jdbc-4.0, jpa-2.0]}'
+    MANAGE_API_PASSWORD: watson
